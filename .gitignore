@@ -18,3 +18,6 @@ deploy_v3/
 # Temporary files
 *.tmp
 *.bak
+
+# Wrangler cache
+.wrangler/

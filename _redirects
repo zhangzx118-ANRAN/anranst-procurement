@@ -1,0 +1,47 @@
+# Cloudflare Pages Redirects
+# Format: source destination [status]
+# Status codes: 301 (permanent), 302 (temporary), 404 (show custom 404 page)
+
+# ============================================================
+# SECTION 1: Language root trailing slash redirects
+# ============================================================
+/zh  /zh/  301
+/en  /en/  301
+/ru  /ru/  301
+
+# ============================================================
+# SECTION 2: Language folder 404 fallback
+# If a language-specific 404 exists, use it; otherwise fall back to root 404
+# ============================================================
+/zh/* /zh/404.html 404
+/en/* /en/404.html 404
+/ru/* /ru/404.html 404
+
+# ============================================================
+# SECTION 3: Old page structure redirects (301)
+# If old website had different page paths, redirect to new equivalents
+# ============================================================
+# Old generic product page redirects
+/zh/products.html  /zh/  301
+/en/products.html  /en/  301
+/ru/products.html  /ru/  301
+
+# Old language-switch redirect (if someone bookmarked the old lang-switch page)
+/zh/lang-switch.html  /zh/  301
+/en/lang-switch.html  /en/  301
+/ru/lang-switch.html  /ru/  301
+
+# ============================================================
+# SECTION 4: Common mistyped/old URL patterns redirect to homepage
+# These are generic fallbacks for any broken old links
+# ============================================================
+/old/*  /  301
+/old-zh/*  /zh/  301
+/old-en/*  /en/  301
+/old-ru/*  /ru/  301
+
+# ============================================================
+# SECTION 5: Root-level 404 fallback (catch-all)
+# Any unmatched path shows the branded 404 page
+# ============================================================
+/* /404.html 404
