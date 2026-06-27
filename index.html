@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anranst - Professional Wear Parts for Mining & Aggregate Equipment</title>
+<meta name="description" content="Anranst supplies professional wear parts for Metso, Sandvik, FLSmidth, ThyssenKrupp and other OEM crushing and grinding equipment.">
+<link rel="canonical" href="https://anranst.com/">
+<link rel="alternate" hreflang="en" href="https://anranst.com/en/">
+<link rel="alternate" hreflang="zh" href="https://anranst.com/zh/">
+<link rel="alternate" hreflang="ru" href="https://anranst.com/ru/">
+<link rel="alternate" hreflang="x-default" href="https://anranst.com/en/">
+<meta property="og:title" content="Anranst - Professional Wear Parts for Mining Equipment">
+<meta property="og:description" content="OEM-compatible wear parts for crushers, mills and sizers. 17 brands, 47 equipment types.">
+<meta property="og:url" content="https://anranst.com/">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX',{send_page_view:true});</script>
+<style>
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0a0a0b;color:#eaeaea;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.container{text-align:center;padding:40px}
+h1{color:#c9a84c;font-size:2rem;margin-bottom:12px}
+p{color:#888;margin-bottom:24px;font-size:1rem}
+.lang-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.lang-links a{color:#c9a84c;text-decoration:none;padding:12px 24px;border:1px solid #c9a84c;border-radius:6px;transition:all .3s}
+.lang-links a:hover{background:#c9a84c;color:#0a0a0b}
+.detecting{color:#666;font-size:0.9rem;margin-top:16px}
+</style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX'{send_page_view:true});</script>
+</head>
+<body>
+<div class="container">
+<h1>Anranst Technology</h1>
+<p>Professional Wear Parts for Mining & Aggregate Equipment</p>
+<p class="detecting" id="detect">Detecting your location...</p>
+<div class="lang-links">
+<a href="en/">English</a>
+<a href="zh/">中文</a>
+<a href="ru/">Русский</a>
+</div>
+</div>
+<script>
+(function(){
+  var target = 'en/';
+  var countryMap = {
+    'CN':'zh/','HK':'zh/','TW':'zh/','MO':'zh/',
+    'RU':'ru/','KZ':'ru/','BY':'ru/','UA':'ru/','UZ':'ru/','KG':'ru/','TJ':'ru/','AM':'ru/','AZ':'ru/','MD':'ru/','LV':'ru/','LT':'ru/','EE':'ru/','GE':'ru/'
+  };
+  
+  function doRedirect(){
+    document.getElementById('detect').textContent = 'Redirecting to ' + target + '...';
+    setTimeout(function(){window.location.href=target;}, 600);
+  }
+  
+  // Check browser language first
+  var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+  if(lang === 'zh') target = 'zh/';
+  else if(lang === 'ru') target = 'ru/';
+  
+  // Try IP geolocation for more accuracy
+  fetch('https://ipapi.co/json/', {cache:'no-store'})
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var cc = (data.country_code || '').toUpperCase();
+      if(countryMap[cc]) target = countryMap[cc];
+      doRedirect();
+    })
+    .catch(function(){
+      // Fallback: try ip-api.com
+      fetch('http://ip-api.com/json/?fields=countryCode', {cache:'no-store'})
+        .then(function(r){return r.json();})
+        .then(function(data){
+          var cc = (data.countryCode || '').toUpperCase();
+          if(countryMap[cc]) target = countryMap[cc];
+          doRedirect();
+        })
+        .catch(function(){doRedirect();});
+    });
+})();
+</script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "CF_ANALYTICS_TOKEN","version":"2024"}'></script>
+</body>
+</html>
