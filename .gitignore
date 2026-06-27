@@ -1,0 +1,20 @@
+# Git
+.git/
+
+# Scripts and source files
+*.py
+__pycache__/
+data/
+extracted/
+website_for_github/
+
+# Deploy directories
+deploy/
+deploy_v3/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
